@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { ContextType, createContext, useMemo } from 'react';
-import { ChildrenProps } from '@/lib/utils/type';
+import { ChildrenProps } from "lib/utils/type";
+import { ContextType, createContext, useMemo } from "react";
 
 export const EnvContext = createContext({});
 
