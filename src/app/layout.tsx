@@ -1,13 +1,18 @@
-import { ChildrenProps } from "lib/utils/type";
 import "./globals.css";
 
+import { ChildrenProps } from "lib/utils/type";
 import { Providers } from "./Providers";
+import { getServerSession } from "next-auth/next";
+import SessionProvider from "app/components/Auth/SessionProvider";
 
-export default function RootLayout({ children }: ChildrenProps) {
+export default async function RootLayout({ children }: ChildrenProps) {
+  const session = await getServerSession();
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        <SessionProvider session={session}>
+          <Providers>{children}</Providers>
+        </SessionProvider>
       </body>
     </html>
   );
