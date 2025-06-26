@@ -1,0 +1,21 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+
+# production
+/build
+
+# local env files
+.env*
+!.env.base
+!.env.test
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

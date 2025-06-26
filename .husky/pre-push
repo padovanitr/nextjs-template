@@ -1,0 +1,7 @@
+echo "Running pre-push hook..." >&2
+
+git diff HEAD --quiet && pnpm tsc && pnpm test
+if [ $? -ne 0 ]; then
+  echo "Error: Uncommitted changes found. Please commit or stash changes before pushing." >&2
+  exit 1
+fi
